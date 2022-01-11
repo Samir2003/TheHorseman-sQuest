@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="HP" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="VBoxContainer" parent="Bar"]
+margin_right = 4.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLevel" type="ProgressBar" parent="Bar/HP"]
+margin_right = 4.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

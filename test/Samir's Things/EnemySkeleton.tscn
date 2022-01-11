@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://skeleton Six-1.png.png" type="Texture" id=1]
+[ext_resource path="res://skeleton Seven-1.png.png" type="Texture" id=2]
+[ext_resource path="res://skeleton Two-1.png.png" type="Texture" id=3]
+[ext_resource path="res://skeleton Three-1.png.png" type="Texture" id=4]
+[ext_resource path="res://skeleton One-1.png.png" type="Texture" id=5]
+[ext_resource path="res://skeleton Five-1.png.png" type="Texture" id=6]
+[ext_resource path="res://skeleton Four-1.png.png" type="Texture" id=7]
+[ext_resource path="res://Samir's Things/EnemySkeleton.gd" type="Script" id=8]
+[ext_resource path="res://Skeletondeath2.png" type="Texture" id=9]
+[ext_resource path="res://Skeletondeath1.png" type="Texture" id=10]
+[ext_resource path="res://Skeletondeath3.png" type="Texture" id=11]
+[ext_resource path="res://Samir's Things/New Piskel1 - Copy.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 48.1686, 54.6339 )
+
+[node name="EnemySkeleton" type="Node2D"]
+scale = Vector2( 2.8, 2.8 )
+
+[node name="EnemySkeleton1" type="KinematicBody2D" parent="."]
+collision_mask = 0
+script = ExtResource( 8 )
+
+[node name="RayCast2D1" type="RayCast2D" parent="EnemySkeleton1"]
+position = Vector2( 2.414, 60 )
+rotation = 3.14159
+scale = Vector2( 10, 2.3 )
+enabled = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="EnemySkeleton1"]
+position = Vector2( 49.022, 4.4853 )
+rotation = 1.5708
+scale = Vector2( 10, 2 )
+enabled = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="EnemySkeleton1"]
+position = Vector2( -42.7954, 6.2213 )
+rotation = -1.5708
+scale = Vector2( 10, 2 )
+enabled = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="EnemySkeleton1"]
+position = Vector2( 1.07101, -30 )
+scale = Vector2( 10, 2.1 )
+enabled = true
+
+[node name="AnimatedSkeleton" type="AnimatedSprite" parent="EnemySkeleton1"]
+position = Vector2( 0, 2 )
+scale = Vector2( 2.3, 2.3 )
+frames = SubResource( 3 )
+animation = "Run"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySkeleton1"]
+position = Vector2( 0.0506973, 8.25124 )
+shape = SubResource( 2 )

@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://otherimports/Pixelated.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://textures/Button6B.png" type="Texture" id=3]
+[ext_resource path="res://textures/Button6C.png" type="Texture" id=4]
+[ext_resource path="res://textures/background2.png" type="Texture" id=5]
+[ext_resource path="res://textures/Button6A.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="."]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 896.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+margin_left = 176.328
+margin_top = 208.084
+margin_right = 828.328
+margin_bottom = 652.084
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.223529, 0.317647, 0.396078, 1 )
+custom_colors/font_color_readonly = Color( 0.235294, 0.356863, 0.470588, 1 )
+text = "                YOU WIN!
+
+RETURN TO THE MAIN MENU"
+readonly = true
+selecting_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="TextureButton" parent="."]
+margin_left = 499.667
+margin_top = 732.845
+margin_right = 759.667
+margin_bottom = 852.845
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="MenuButton" to="MenuButton" method="_on_MenuButton_button_up"]

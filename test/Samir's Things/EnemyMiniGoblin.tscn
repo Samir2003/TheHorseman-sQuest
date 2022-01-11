@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Goblin Two-1.png.png" type="Texture" id=1]
+[ext_resource path="res://Goblin One-1.png.png" type="Texture" id=2]
+[ext_resource path="res://Goblin Three-1.png.png" type="Texture" id=3]
+[ext_resource path="res://Goblin Five-1.png.png" type="Texture" id=4]
+[ext_resource path="res://Goblin Four-1.png.png" type="Texture" id=5]
+[ext_resource path="res://Goblin SIx-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Goblin Seven-1.png.png" type="Texture" id=7]
+[ext_resource path="res://Samir's Things/SmallGoblinDeath2.png" type="Texture" id=8]
+[ext_resource path="res://Samir's Things/SmallGoblinDeath3.png" type="Texture" id=9]
+[ext_resource path="res://Samir's Things/SmallGoblinDeath1.png" type="Texture" id=10]
+[ext_resource path="res://Samir's Things/New Piskel.png" type="Texture" id=11]
+[ext_resource path="res://Samir's Things/EnemyMiniGoblin.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), null ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Run",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 48.1686, 54.6339 )
+
+[node name="EnemyMiniGoblin" type="Node2D"]
+scale = Vector2( 3, 3 )
+
+[node name="EnemyMiniGoblin1" type="KinematicBody2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="RayCast2D1" type="RayCast2D" parent="EnemyMiniGoblin1"]
+position = Vector2( 7.414, 58.102 )
+rotation = 3.14159
+scale = Vector2( 10, 2.3 )
+enabled = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="EnemyMiniGoblin1"]
+position = Vector2( 54.3553, -0.181368 )
+rotation = 1.5708
+scale = Vector2( 10, 2 )
+enabled = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="EnemyMiniGoblin1"]
+position = Vector2( -32.7954, 1.2213 )
+rotation = -1.5708
+scale = Vector2( 10, 2 )
+enabled = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="EnemyMiniGoblin1"]
+position = Vector2( 8.07101, -31 )
+scale = Vector2( 10, 2.1 )
+enabled = true
+
+[node name="AnimatedMiniGoblin" type="AnimatedSprite" parent="EnemyMiniGoblin1"]
+scale = Vector2( 3.41577, 3.87253 )
+frames = SubResource( 3 )
+animation = "Run"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyMiniGoblin1"]
+position = Vector2( 7.38405, 6.91791 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )

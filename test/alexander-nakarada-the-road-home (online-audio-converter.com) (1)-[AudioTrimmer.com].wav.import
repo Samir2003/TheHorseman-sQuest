@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/alexander-nakarada-the-road-home (online-audio-converter.com) (1)-[AudioTrimmer.com].wav-1fdcbf2689d0ecb72fef25b50c77ee36.sample"
+
+[deps]
+
+source_file="res://alexander-nakarada-the-road-home (online-audio-converter.com) (1)-[AudioTrimmer.com].wav"
+dest_files=[ "res://.import/alexander-nakarada-the-road-home (online-audio-converter.com) (1)-[AudioTrimmer.com].wav-1fdcbf2689d0ecb72fef25b50c77ee36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

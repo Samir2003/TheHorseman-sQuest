@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://textures/background2.png" type="Texture" id=1]
+[ext_resource path="res://textures/Background.png" type="Texture" id=2]
+[ext_resource path="res://textures/CampaignLogo.png" type="Texture" id=3]
+[ext_resource path="res://otherimports/Pixelated.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/CampaignScene.gd" type="Script" id=5]
+[ext_resource path="res://alexander-nakarada-the-road-home (online-audio-converter.com) (1)-[AudioTrimmer.com].wav" type="AudioStream" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0 )
+
+[node name="CampaignScene" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContainerImage" type="TextureRect" parent="."]
+anchor_left = 0.197
+anchor_top = 0.125
+anchor_right = 0.797
+anchor_bottom = 0.875
+margin_left = -0.160004
+margin_right = -0.159973
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Title" type="TextureRect" parent="ContainerImage"]
+margin_left = 232.888
+margin_top = 19.4262
+margin_right = 532.888
+margin_bottom = 59.4262
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backstory" type="TextEdit" parent="ContainerImage/Title"]
+margin_left = -192.0
+margin_top = 108.0
+margin_right = 536.0
+margin_bottom = 763.0
+custom_styles/read_only = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.152941, 0.227451, 0.298039, 1 )
+custom_colors/font_color_readonly = Color( 0.239216, 0.337255, 0.431373, 1 )
+text = "IN THE LATE 14TH CENTURY, MONSTERS 
+BEGAN A CONQUEST OF THE MODERN WORLD.
+
+THE VENETIANS HAVE DECIDED TO SEND
+THEIR BEST WARRIOR TO DEFEND THE THREE
+SECTORS THAT SURROUND THE CAPITAL,
+VENICE.
+
+YOU ARE THAT WARRIOR.
+YOU HAVE 4 CHANCES"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+max_distance = 999999.0

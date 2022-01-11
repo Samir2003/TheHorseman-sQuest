@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Samir's Things/ProjectileLeft.gd" type="Script" id=1]
+[ext_resource path="res://arrow.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.49962, 4.63442 )
+
+[node name="Projectile" type="Node2D"]
+
+[node name="KinematicBody2D" type="Area2D" parent="."]
+position = Vector2( 10, 0 )
+collision_mask = 8
+script = ExtResource( 1 )
+
+[node name="arrow" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 31, 42 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 20.5, 35.568 )
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="KinematicBody2D"]
+position = Vector2( 49.1738, 36.1821 )
+rotation = -4.71239
+scale = Vector2( 0.6, 0.6 )
+enabled = true
+
+[node name="Timer" type="Timer" parent="KinematicBody2D"]
+autostart = true
+[connection signal="body_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_entered"]
+[connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]

@@ -1,0 +1,203 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://textures/Background.png" type="Texture" id=1]
+[ext_resource path="res://textures/background2.png" type="Texture" id=2]
+[ext_resource path="res://textures/FinalLogo1.png" type="Texture" id=3]
+[ext_resource path="res://textures/Button1A.png" type="Texture" id=4]
+[ext_resource path="res://textures/Button1B.png" type="Texture" id=5]
+[ext_resource path="res://textures/Button1C.png" type="Texture" id=6]
+[ext_resource path="res://textures/Button3A.png" type="Texture" id=7]
+[ext_resource path="res://textures/Button3B.png" type="Texture" id=8]
+[ext_resource path="res://textures/Button3C.png" type="Texture" id=9]
+[ext_resource path="res://textures/Button2A.png" type="Texture" id=10]
+[ext_resource path="res://textures/Button2B.png" type="Texture" id=11]
+[ext_resource path="res://textures/Button2C.png" type="Texture" id=12]
+[ext_resource path="res://textures/Button4A.png" type="Texture" id=13]
+[ext_resource path="res://textures/Button4B.png" type="Texture" id=14]
+[ext_resource path="res://textures/Button4C.png" type="Texture" id=15]
+[ext_resource path="res://textures/Button5A.png" type="Texture" id=16]
+[ext_resource path="res://textures/Button5B.png" type="Texture" id=17]
+[ext_resource path="res://textures/Button5C.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/QuitGame.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/CreditsButton.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/ControlsButton.gd" type="Script" id=21]
+[ext_resource path="res://Scripts/CampaignModeButton.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/EndlessMode.gd" type="Script" id=23]
+[ext_resource path="res://alexander-nakarada-the-road-home (online-audio-converter.com) (1)-[AudioTrimmer.com].wav" type="AudioStream" id=24]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContainerTexture" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 252.0
+margin_top = 128.0
+margin_right = 1020.0
+margin_bottom = 896.0
+rect_clip_content = true
+mouse_filter = 2
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="ContainerTexture"]
+margin_left = 5.091
+margin_right = 759.091
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 358.0
+margin_top = 350.0
+margin_right = -662.0
+margin_bottom = -399.0
+rect_pivot_offset = Vector2( 0, 150 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "hi"
+}
+
+[node name="CampaignModeButton" type="TextureButton" parent="MenuContainer"]
+margin_right = 260.0
+margin_bottom = 120.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 22 )
+
+[node name="barrier" type="TextureButton" parent="MenuContainer"]
+margin_top = 124.0
+margin_bottom = 124.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+disabled = true
+expand = true
+stretch_mode = 3
+
+[node name="ControlsButton" type="TextureButton" parent="MenuContainer"]
+margin_top = 155.0
+margin_right = 260.0
+margin_bottom = 275.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 21 )
+
+[node name="MenuContainer2" type="VBoxContainer" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 656.0
+margin_top = 350.0
+margin_right = -364.0
+margin_bottom = -399.0
+rect_pivot_offset = Vector2( 0, 150 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "hi"
+}
+
+[node name="EndlessMode" type="TextureButton" parent="MenuContainer2"]
+margin_right = 260.0
+margin_bottom = 120.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+script = ExtResource( 23 )
+
+[node name="barrier" type="TextureButton" parent="MenuContainer2"]
+margin_top = 124.0
+margin_bottom = 124.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+disabled = true
+expand = true
+stretch_mode = 3
+
+[node name="CreditsButtom" type="TextureButton" parent="MenuContainer2"]
+margin_top = 155.0
+margin_right = 260.0
+margin_bottom = 275.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
+script = ExtResource( 20 )
+
+[node name="MenuContainer3" type="VBoxContainer" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 507.0
+margin_top = 650.0
+margin_right = -513.0
+margin_bottom = -260.0
+rect_pivot_offset = Vector2( 0, 150 )
+focus_mode = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "hi"
+}
+
+[node name="QuitButton" type="TextureButton" parent="MenuContainer3"]
+margin_right = 260.0
+margin_bottom = 120.0
+focus_mode = 1
+mouse_filter = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 18 )
+script = ExtResource( 19 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 24 )
+autoplay = true
+max_distance = 1e+07
+[connection signal="ready" from="." to="." method="_on_TitleScreen_ready"]
+[connection signal="button_up" from="MenuContainer/CampaignModeButton" to="MenuContainer/CampaignModeButton" method="_on_CampaignModeButton_button_up"]
+[connection signal="button_up" from="MenuContainer/ControlsButton" to="MenuContainer/ControlsButton" method="_on_ControlsButton_button_up"]
+[connection signal="button_up" from="MenuContainer2/EndlessMode" to="MenuContainer2/EndlessMode" method="_on_EndlessMode_button_up"]
+[connection signal="button_up" from="MenuContainer2/CreditsButtom" to="MenuContainer2/CreditsButtom" method="_on_Button4_button_up"]
+[connection signal="button_up" from="MenuContainer3/QuitButton" to="MenuContainer3/QuitButton" method="_on_QuitButton_button_up"]
